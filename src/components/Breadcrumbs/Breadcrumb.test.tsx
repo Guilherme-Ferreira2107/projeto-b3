@@ -1,22 +1,24 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
-import Breadcrumb from "./Breadcrumbs";
-// import { IItems } from "./interfaces";
+import { render, screen } from "@testing-library/react";
+import { ITEMS_MOCK } from "__mocks__/breadcrumb.mocks";
 
-const items = [
-  { label: "Home", link: "/" },
-  { label: "Products", link: "/products" },
-  { label: "Shoes", link: "/products/shoes" },
-];
+import Breadcrumb from "./Breadcrumbs";
 
 describe("Breadcrumb", () => {
-  it("renders Breadcrumb with correct items", async () => {
-    const { container, debug } = render(<Breadcrumb items={items} />);
+  it("renders Breadcrumb with correct items", () => {
+    render(<Breadcrumb items={ITEMS_MOCK} />);
 
-    debug();
+    ITEMS_MOCK.forEach((item) => {
+      expect(screen.getByText(item.label)).toBeInTheDocument();
+    });
+  });
 
-    await waitFor(() => {
-      expect(container).toBeInTheDocument();
+  it("renders correct links for each item", () => {
+    render(<Breadcrumb items={ITEMS_MOCK} />);
+
+    ITEMS_MOCK.forEach((item) => {
+      const linkElement = screen.getByText(item.label);
+      expect(linkElement.closest("a")).toHaveAttribute("href", item.link);
     });
   });
 });

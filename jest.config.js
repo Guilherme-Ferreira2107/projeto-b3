@@ -9,8 +9,8 @@ const customJestConfig = {
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
   collectCoverageFrom: [
-    "<rootDir>/{app,components,libs}/**/*.tsx",
-    "!<rootDir>/app/{api,health}/**/*.{ts,tsx}",
+    "<rootDir>/src/{app,components,libs}/**/*.tsx",
+    "!<rootDir>/src/app/{api,health}/**/*.{ts,tsx}",
     "!<rootDir>/**/index.{ts,tsx}",
     "!<rootDir>/**/*.{style,styles,mock,validation}.{ts,tsx}",
     "!<rootDir>/**/__tests__/**",
