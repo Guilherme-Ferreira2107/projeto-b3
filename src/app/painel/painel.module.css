@@ -1,0 +1,10 @@
+.containerPainel {
+  width: 100%;
+  height: calc(100vh - 64px);
+  text-align: initial;
+  padding: 20px 20px 0;
+}
+
+.boxContainer {
+  width: 100%;
+}

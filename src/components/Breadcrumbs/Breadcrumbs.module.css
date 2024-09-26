@@ -1,0 +1,22 @@
+.container ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.container li {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  transition: ease 0.15s;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.arrowIcon {
+  margin: 0 4px -2px;
+  font-size: 14px;
+}

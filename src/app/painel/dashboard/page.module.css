@@ -1,0 +1,13 @@
+.formContainer {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.buttonFilter {
+  min-height: 40px;
+}

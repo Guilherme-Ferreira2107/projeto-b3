@@ -1,95 +1,103 @@
-import Image from "next/image";
+"use client";
+
+import React from "react";
+import { useRouter } from "next/navigation";
+import {
+  Button,
+  Container,
+  Typography,
+  Grid2 as Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PaletteIcon from "@mui/icons-material/Palette";
+import TableChartIcon from "@mui/icons-material/TableChart";
+
 import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const Home: React.FC = () => {
+  const router = useRouter();
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  const handleStart = () => {
+    router.push("/login");
+  };
+
+  return (
+    <Container maxWidth="md">
+      <Typography variant="h3" component="h1" gutterBottom>
+        Bem-vindo ao Projeto de Cotações de Moedas
+      </Typography>
+      <Typography variant="h6" gutterBottom>
+        Gerencie seu perfil, personalize o tema e acompanhe as cotações de
+        moedas em tempo real.
+      </Typography>
+
+      <Grid container spacing={4} justifyContent="center">
+        <Grid>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardContent>
+              <AccountCircleIcon
+                className={styles.iconsColor}
+                fontSize="large"
+              />
+              <Typography variant="h5" component="div" gutterBottom>
+                Cadastro de Usuário
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Cadastre-se com seus dados pessoais e comece a usar a aplicação.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardContent>
+              <PaletteIcon fontSize="large" className={styles.iconsColor} />
+              <Typography variant="h5" component="div" gutterBottom>
+                Personalização de Tema
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Alterne entre modo claro e escuro e escolha suas cores
+                favoritas.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardContent>
+              <TableChartIcon className={styles.iconsColor} fontSize="large" />
+              <Typography variant="h5" component="div" gutterBottom>
+                Tabela de Moedas
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Visualize cotações atualizadas e ordene os dados conforme sua
+                preferência.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Button
+        variant="contained"
+        size="large"
+        onClick={handleStart}
+        sx={{
+          marginTop: "40px",
+          backgroundColor: "#004f4d",
+          "&:hover": {
+            backgroundColor: "#003f3c",
+          },
+        }}
+      >
+        Começar Agora
+      </Button>
+    </Container>
   );
-}
+};
+
+export default Home;
