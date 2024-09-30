@@ -66,7 +66,7 @@ const Dashboard = () => {
   }, [setValue]);
 
   useEffect(() => {
-    if (data) {
+    if (data && data.rates) {
       const newRows = transformFixerResponseToRows(data);
       setRows(newRows);
     }

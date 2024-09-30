@@ -59,6 +59,7 @@ const AccountMenu = () => {
       <Menu
         anchorEl={anchorEl}
         id="account-menu"
+        data-testid="account-menu"
         open={open}
         onClose={handleClose}
         onClick={handleClose}

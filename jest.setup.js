@@ -12,3 +12,9 @@ jest.mock("next/navigation", () => ({
   usePathname: jest.fn(),
   useServerInsertedHTML: jest.fn(),
 }));
+
+jest.mock("react-toastify", () => ({
+  toast: {
+    success: jest.fn(),
+  },
+}));

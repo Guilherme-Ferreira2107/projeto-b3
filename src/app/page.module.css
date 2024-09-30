@@ -22,7 +22,6 @@
   gap: 1rem;
 }
 
-.containerIndex::before,
 .containerIndex::after {
   content: "B3";
   position: fixed;
@@ -31,29 +30,16 @@
   z-index: -1;
 }
 
-.containerIndex::before {
-  opacity: 0;
-  margin-right: calc(100vw - 21rem);
-  margin-bottom: calc(100vh - 16rem);
-  animation: moveB3 30s ease-out infinite;
-}
-
 .containerIndex::after {
   opacity: 1;
   margin-left: calc(100vw - 22rem);
   margin-top: calc(100vh - 15rem);
-  animation: moveB3Two 30s ease-out infinite;
+  animation: moveB3 20s ease-out infinite;
 }
 
 @media (min-width: 768px) {
-  .containerIndex::before,
   .containerIndex::after {
     font-size: 30rem;
-  }
-
-  .containerIndex::before {
-    margin-right: calc(100vw - 31rem);
-    margin-bottom: calc(100vh - 22rem);
   }
 
   .containerIndex::after {
@@ -63,14 +49,8 @@
 }
 
 @media (min-width: 1024px) {
-  .containerIndex::before,
   .containerIndex::after {
     font-size: 60rem;
-  }
-
-  .containerIndex::before {
-    margin-right: calc(100vw - 66rem);
-    margin-bottom: calc(100vh - 47rem);
   }
 
   .containerIndex::after {
@@ -80,12 +60,6 @@
 }
 
 @keyframes moveB3 {
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes moveB3Two {
   50% {
     opacity: 0;
   }

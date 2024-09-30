@@ -14,13 +14,13 @@ import {
 } from "@mui/material";
 import {
   Settings,
-  Menu as MenuIcon,
+  Menu as MenuIconMui,
   AccountCircle,
   Leaderboard,
 } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
 
-const Menu = () => {
+const Menu: React.FC = () => {
   const theme = useTheme();
   const { push } = useRouter();
   const [open, setOpen] = useState(false);
@@ -83,7 +83,7 @@ const Menu = () => {
             size="small"
             aria-label="menu"
           >
-            <MenuIcon sx={{ color: theme.palette.common.white }} />
+            <MenuIconMui sx={{ color: theme.palette.common.white }} />
           </IconButton>
         </Tooltip>
       </Box>
@@ -94,4 +94,4 @@ const Menu = () => {
   );
 };
 
-export { Menu };
+export default Menu;

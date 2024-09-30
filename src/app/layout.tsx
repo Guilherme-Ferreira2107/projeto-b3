@@ -2,9 +2,10 @@
 
 import Head from "next/head";
 import { Suspense } from "react";
+import { Box } from "@mui/material";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { Box, CssBaseline } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import { PersistGate } from "redux-persist/integration/react";
 
 import "@/styles/global.css";
@@ -15,7 +16,7 @@ import styles from "./page.module.css";
 import { Loading } from "@/components";
 import { store, persistor } from "@/store";
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="pt-BR">
       <Head>

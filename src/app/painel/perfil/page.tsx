@@ -72,6 +72,7 @@ const Perfil = () => {
             label="Nome"
             fullWidth
             size="small"
+            data-testid="input-name"
             {...register("name")}
             error={!!errors.name}
             helperText={errors.name?.message}
@@ -80,6 +81,7 @@ const Perfil = () => {
             label="Sobrenome"
             fullWidth
             size="small"
+            data-testid="input-lastname"
             {...register("lastName")}
             error={!!errors.lastName}
             helperText={errors.lastName?.message}
@@ -88,6 +90,7 @@ const Perfil = () => {
             label="País"
             fullWidth
             size="small"
+            data-testid="input-country"
             {...register("country")}
             error={!!errors.country}
             helperText={errors.country?.message}
@@ -97,6 +100,7 @@ const Perfil = () => {
             type="email"
             fullWidth
             size="small"
+            data-testid="input-email"
             {...register("email")}
             error={!!errors.email}
             helperText={errors.email?.message}

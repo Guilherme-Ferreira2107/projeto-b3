@@ -80,7 +80,11 @@ const Configuracoes = () => {
                 Se habilitado exibe o tema escuro
               </Typography>
             </Box>
-            <Switch {...register("darkMode")} defaultChecked={user.darkMode} />
+            <Switch
+              aria-label="darkMode"
+              {...register("darkMode")}
+              defaultChecked={user.darkMode}
+            />
           </Box>
 
           <Box
@@ -114,6 +118,7 @@ const Configuracoes = () => {
               fullWidth
               size="small"
               defaultValue="PT"
+              placeholder="Selecione a linguagem"
               {...register("language")}
             >
               <MenuItem value="PT">Português</MenuItem>

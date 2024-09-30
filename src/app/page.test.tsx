@@ -1,51 +1,43 @@
 import React from "react";
 import { useRouter } from "next/navigation";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import Home from "./page";
-
-jest.mock("next/navigation", () => ({
-  useRouter: jest.fn(),
-}));
 
 describe("Home Component", () => {
   const mockPush = jest.fn();
 
   beforeEach(() => {
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
+    (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
+    render(<Home />);
   });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it("renders Home with correct content", () => {
-    render(<Home />);
-
+  it("renders welcome message and descriptions", () => {
     expect(
       screen.getByRole("heading", {
-        level: 1,
-        name: /bem-vindo ao projeto de cotações de moedas/i,
+        name: /Bem-vindo ao Projeto de Cotações de Moedas/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        name: /Gerencie seu perfil, personalize o tema e acompanhe as cotações de moedas em tempo real./i,
       })
     ).toBeInTheDocument();
 
-    expect(
-      screen.getByText(/gerencie seu perfil, personalize o tema/i)
-    ).toBeInTheDocument();
-
-    expect(screen.getByText(/cadastro de usuário/i)).toBeInTheDocument();
-    expect(screen.getByText(/personalização de tema/i)).toBeInTheDocument();
-    expect(screen.getByText(/tabela de moedas/i)).toBeInTheDocument();
+    expect(screen.getByText(/Cadastro de Usuário/i)).toBeInTheDocument();
+    expect(screen.getByText(/Personalização de Tema/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tabela de Moedas/i)).toBeInTheDocument();
   });
 
-  it("navigates to the login page when 'Começar Agora' button is clicked", () => {
-    render(<Home />);
+  it("navigates to /login when 'Começar Agora' button is clicked", () => {
+    const startButton = screen.getByRole("button", { name: /Começar Agora/i });
+    expect(startButton).toBeInTheDocument();
 
-    const button = screen.getByRole("button", { name: /começar agora/i });
-
-    fireEvent.click(button);
+    startButton.click();
 
     expect(mockPush).toHaveBeenCalledWith("/login");
   });

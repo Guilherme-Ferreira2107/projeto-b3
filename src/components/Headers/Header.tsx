@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         }}
       >
         <Box sx={{ display: "flex", gap: "1rem" }}>
-          {!user.isAuthenticated ? (
+          {!user?.isAuthenticated ? (
             <LinkComponent href="/" color={theme.palette.common.white}>
               Projeto B3
             </LinkComponent>
@@ -35,10 +35,10 @@ const Header: React.FC = () => {
           )}
         </Box>
 
-        {user.isAuthenticated ? (
+        {user?.isAuthenticated ? (
           <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <Typography variant="body1" color="inherit">
-              {`Bem-vindo, ${user.name}`}
+              {`Bem-vindo, ${user?.name}`}
             </Typography>
             <AccountMenu />
           </Box>

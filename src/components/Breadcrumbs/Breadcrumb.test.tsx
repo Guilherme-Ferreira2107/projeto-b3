@@ -1,8 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ITEMS_MOCK } from "__mocks__/breadcrumb.mocks";
+import { ITEMS_MOCK } from "@/__mocks__";
 
 import Breadcrumb from "./Breadcrumbs";
+
+// jest.mock("next/link", () => ({ children, href }) => (
+//   <a href={href}>{children}</a>
+// ));
 
 describe("Breadcrumb", () => {
   it("renders Breadcrumb with correct items", () => {

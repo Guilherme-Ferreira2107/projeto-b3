@@ -3,7 +3,6 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { useRouter } from "next/navigation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TextField, Button, Container, Typography, Paper } from "@mui/material";
@@ -25,16 +24,11 @@ const Cadastro: React.FC = () => {
     mode: "onBlur",
   });
 
-  const router = useRouter();
   const dispatch = useDispatch();
 
   const onSubmit: SubmitHandler<Partial<IUserState>> = (data) => {
     dispatch(updateUser(data));
     toast.success("Cadastro realizado com sucesso!");
-
-    setTimeout(() => {
-      router.push("/login");
-    }, 1000);
   };
 
   return (
@@ -52,12 +46,14 @@ const Cadastro: React.FC = () => {
             label="Nome"
             fullWidth
             size="small"
+            data-testid="input-name"
             {...register("name")}
             error={!!errors.name}
             helperText={errors.name?.message}
           />
 
           <TextField
+            data-testid="input-lastname"
             label="Sobrenome"
             fullWidth
             size="small"
@@ -67,6 +63,7 @@ const Cadastro: React.FC = () => {
           />
 
           <TextField
+            data-testid="input-country"
             label="País"
             fullWidth
             size="small"
@@ -76,6 +73,7 @@ const Cadastro: React.FC = () => {
           />
 
           <TextField
+            data-testid="input-email"
             label="E-mail"
             type="email"
             fullWidth
