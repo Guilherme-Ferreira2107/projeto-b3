@@ -2,6 +2,8 @@
 
 Este projeto tem como objetivo fornecer uma plataforma de acompanhamento em tempo real das cotações de moedas. Os usuários podem gerenciar perfis, personalizar temas e visualizar cotações atualizadas. A aplicação foi desenvolvida utilizando Next.js, Redux, Material UI e outras tecnologias modernas.
 
+Projeto: https://projeto-b3.vercel.app/
+
 ## Índice
 
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
