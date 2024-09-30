@@ -36,7 +36,7 @@ Para rodar o projeto localmente, siga os passos abaixo:
 1. Clone este repositório:
 
 bash
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/Guilherme-Ferreira2107/projeto-b3.git)](https://github.com/Guilherme-Ferreira2107/projeto-b3.git)
+git clone [[https://github.com/seu-usuario/seu-repositorio.git](https://github.com/Guilherme-Ferreira2107/projeto-b3.git)](https://github.com/Guilherme-Ferreira2107/projeto-b3.git)
 
 2. Acesse o diretório do projeto:
 
