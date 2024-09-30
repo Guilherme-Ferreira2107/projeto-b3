@@ -36,12 +36,12 @@ Para rodar o projeto localmente, siga os passos abaixo:
 1. Clone este repositório:
 
 bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/Guilherme-Ferreira2107/projeto-b3.git)
 
 2. Acesse o diretório do projeto:
 
 bash
-cd seu-repositorio
+cd projeto-b3
 
 3. Instale as dependências:
 
